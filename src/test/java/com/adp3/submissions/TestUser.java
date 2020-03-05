@@ -33,7 +33,7 @@ public class TestUser {
         System.out.println(fury.hashCode());
         System.out.println(tyson.hashCode());
 
-        Assert.assertTrue(fury == (tyson));
+        Assert.assertSame(tyson, fury);
     }       //end testEquality()
 
 
@@ -54,6 +54,11 @@ public class TestUser {
         }
     }       //end testTimeout()
 
+
+    @Test
+    public void testFailing(){
+        Assert.fail();
+    }
 
     @Ignore
     @Test
